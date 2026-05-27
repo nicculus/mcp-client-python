@@ -1,10 +1,10 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
 name = "mcp-client-python"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Python client library and CLI for connecting to a serverless MCP server"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -26,6 +26,9 @@ dev = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.hatch.version]
+source = "vcs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mcp_client"]
