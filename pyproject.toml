@@ -19,5 +19,13 @@ dependencies = [
 [project.scripts]
 mcp-client = "mcp_client.cli:cli"
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/mcp_client"]
